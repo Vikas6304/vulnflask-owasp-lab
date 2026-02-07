@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card p-4 shadow">
+  <h3>Welcome {{ session['user'] }}</h3>
+  <p>This application is intentionally vulnerable for security testing.</p>
+
+  <a href="/labs" class="btn btn-primary mt-3">
+    Open OWASP Labs
+  </a>
+
+  <a href="/admin" class="btn btn-danger mt-3 ms-2">
+    Admin Page
+  </a>
+</div>
+
+{% endblock %}
+
+
+

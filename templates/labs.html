@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow p-4">
+  <h2 class="mb-3">OWASP Top 10 – Vulnerable Labs</h2>
+
+  <p class="text-muted">
+    This application is intentionally vulnerable and created for educational purposes only.
+  </p>
+
+  <div class="list-group mt-4">
+
+    <a href="/labs/a01" class="list-group-item list-group-item-action">
+      🔓 A01 – Broken Access Control
+    </a>
+
+    <a href="/labs/a03" class="list-group-item list-group-item-action">
+      💉 A03 – Injection (SQL / Command Injection)
+    </a>
+
+    <a href="/labs/a07" class="list-group-item list-group-item-action">
+      🔑 A07 – Identification & Authentication Failures
+    </a>
+
+    <a href="/labs/a05" class="list-group-item list-group-item-action">
+      ⚙️ A05 – Security Misconfiguration
+    </a>
+
+    <a href="/labs/a08" class="list-group-item list-group-item-action">
+      📤 A08 – Software & Data Integrity Failures
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}
