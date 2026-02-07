@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card shadow p-4">
+  <h2>📤 A08 – File Upload Vulnerability</h2>
+
+  <p class="text-muted">
+    This lab demonstrates insecure file upload without validation.
+  </p>
+
+  <hr>
+
+  <h5>🎯 Objective</h5>
+  <p>
+    Upload a malicious file such as <code>.html</code> or <code>.php</code>.
+    The application does not restrict file type.
+  </p>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" class="form-control mb-3" required>
+    <button class="btn btn-danger">Upload File</button>
+  </form>
+
+  {% if filename %}
+  <div class="alert alert-success mt-3">
+    File uploaded: <b>{{ filename }}</b>
+  </div>
+  {% endif %}
+
+  <a href="/labs" class="btn btn-secondary mt-3">
+    ← Back to Labs
+  </a>
+</div>
+
+{% endblock %}

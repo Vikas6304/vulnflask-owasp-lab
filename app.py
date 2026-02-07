@@ -62,6 +62,21 @@ def a05_lab():
 def misconfig_error():
     # Intentional error to expose stack trace
     return 1 / 0
+import os
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.route("/labs/a08", methods=["GET", "POST"])
+def a08_lab():
+    filename = None
+    if request.method == "POST":
+        file = request.files["file"]
+        filename = file.filename
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+    return render_template("a08.html", filename=filename)
+
 
 
 if __name__ == "__main__":
